@@ -1,4 +1,4 @@
-package com.fernandeza.price_finder.domain.model;
+package com.fernandeza.price_finder.infrastructure.adapters.input.rest.data.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,15 +9,13 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Price {
+public class FindPriceResponse {
 
-    private Long id;
+    private Long productId;
     private Long brandId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Long priceList;
-    private Long productId;
-    private Integer priority;
     private Double value;
     private String currency;
 }
