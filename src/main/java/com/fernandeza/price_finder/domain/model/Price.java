@@ -4,19 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @AllArgsConstructor
 public class Price {
 
-    private long id;
-    private long brandId;
-    private LocalDate startDate;
-    private LocalDate endDate;
-    private long productId;
-    private int priority;
-    private double value;
+    private Long id;
+    private Long brandId;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    private Long priceList;
+    private Long productId;
+    private Integer priority;
+    private Double value;
     private String currency;
 }
