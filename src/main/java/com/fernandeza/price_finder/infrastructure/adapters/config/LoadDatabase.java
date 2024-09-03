@@ -26,13 +26,13 @@ class LoadDatabase {
                     LocalDateTime.parse("2020-12-31-23.59.59", formatter),1L,35455L,0,35.50,"EUR")));
 
             log.info("Preloading " + repository.save(new PriceEntity(1L, LocalDateTime.parse("2020-06-14-15.00.00", formatter),
-                    LocalDateTime.parse("2020-06-14-18.30.00", formatter),2L,35455L,0,24.45,"EUR")));
+                    LocalDateTime.parse("2020-06-14-18.30.00", formatter),2L,35455L,1,24.45,"EUR")));
 
             log.info("Preloading " + repository.save(new PriceEntity(1L, LocalDateTime.parse("2020-06-15-00.00.00", formatter),
-                    LocalDateTime.parse("2020-06-15-11.00.00", formatter),3L,35455L,0,30.50,"EUR")));
+                    LocalDateTime.parse("2020-06-15-11.00.00", formatter),3L,35455L,1,30.50,"EUR")));
 
             log.info("Preloading " + repository.save(new PriceEntity(1L, LocalDateTime.parse("2020-06-15-16.00.00", formatter),
-                    LocalDateTime.parse("2020-12-31-23.59.59", formatter),4L,35455L,0,38.95,"EUR")));
+                    LocalDateTime.parse("2020-12-31-23.59.59", formatter),4L,35455L,1,38.95,"EUR")));
         };
     }
 }

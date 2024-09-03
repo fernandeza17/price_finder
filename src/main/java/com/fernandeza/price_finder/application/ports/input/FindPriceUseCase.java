@@ -6,5 +6,5 @@ import java.time.LocalDateTime;
 
 public interface FindPriceUseCase {
 
-    Price findPrice(LocalDateTime date, Long brandId, Long productId);
+    Price findPriceByDateBrandAndProduct(LocalDateTime date, Long brandId, Long productId);
 }

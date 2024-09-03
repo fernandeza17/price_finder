@@ -5,6 +5,7 @@ import com.fernandeza.price_finder.domain.model.Price;
 import com.fernandeza.price_finder.infrastructure.adapters.input.rest.data.response.FindPriceResponse;
 import com.fernandeza.price_finder.infrastructure.adapters.input.rest.mapper.PriceRestMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +25,8 @@ public class PriceRestAdapter {
     private final PriceRestMapper priceRestMapper;
 
     @GetMapping(value = "/prices/{date}/{brandId}/{productId}")
-    public ResponseEntity<FindPriceResponse> getProduct(@PathVariable LocalDateTime date, @PathVariable Long brandId, @PathVariable Long productId){
-        Price price = findPriceUseCase.findPrice(date, brandId, productId);
+    public ResponseEntity<FindPriceResponse> findPriceByDateBrandAndProduct(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss") LocalDateTime date, @PathVariable Long brandId, @PathVariable Long productId){
+        Price price = findPriceUseCase.findPriceByDateBrandAndProduct(date, brandId, productId);
         return new ResponseEntity<>(priceRestMapper.toFindPriceResponse(price), HttpStatus.OK);
     }
 }
